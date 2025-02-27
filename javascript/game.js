@@ -343,36 +343,47 @@ function create() {
     smoothedControls = new SmoothedHorionztalControl(0.001);
 }
 
-function createControls() {
+function fetchControls() {
+    fetch('/controls')
+        .then(response => response.json())
+        .then(data => {
+            // Simulate key press based on API response
+            controlKeys.JUMP.isDown = data.JUMP;
+            controlKeys.DOWN.isDown = data.CROUCH;
+            controlKeys.LEFT.isDown = data.LEFT;
+            controlKeys.RIGHT.isDown = data.RIGHT;
+            controlKeys.FIRE.isDown = data.FIRE;
+        })
+        .catch(error => console.error('Error fetching controls:', error));
+}
 
+// Poll controls every 100ms
+setInterval(fetchControls, 100);
+
+function createControls() {
     this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
         x: screenWidth * 0.118,
         y: screenHeight / 1.68,
         radius: mobileDevice ? 100 : 0,
         base: this.add.circle(0, 0, mobileDevice ? 75 : 0, 0x0000000, 0.05),
         thumb: this.add.circle(0, 0, mobileDevice ? 25 : 0, 0xcccccc, 0.2),
-        // dir: '8dir',   // 'up&down'|0|'left&right'|1|'4dir'|2|'8dir'|3
-        // forceMin: 16,
-        // enable: true
     });
 
     // Set control keys
-
     const keyNames = ['JUMP', 'DOWN', 'LEFT', 'RIGHT', 'FIRE', 'PAUSE'];
-    const defaultCodes = [Phaser.Input.Keyboard.KeyCodes.UP, Phaser.Input.Keyboard.KeyCodes.DOWN, Phaser.Input.Keyboard.KeyCodes.LEFT, Phaser.Input.Keyboard.KeyCodes.RIGHT, Phaser.Input.Keyboard.KeyCodes.SHIFT, Phaser.Input.Keyboard.KeyCodes.ESC];
+    const defaultCodes = [
+        Phaser.Input.Keyboard.KeyCodes.UP, 
+        Phaser.Input.Keyboard.KeyCodes.DOWN, 
+        Phaser.Input.Keyboard.KeyCodes.LEFT, 
+        Phaser.Input.Keyboard.KeyCodes.RIGHT, 
+        Phaser.Input.Keyboard.KeyCodes.SHIFT, 
+        Phaser.Input.Keyboard.KeyCodes.ESC
+    ];
     
     keyNames.forEach((keyName, i) => {
-      const keyCode = localStorage.getItem(keyName) ? Number(localStorage.getItem(keyName)) : defaultCodes[i];
-      controlKeys[keyName] = this.input.keyboard.addKey(keyCode);
+        const keyCode = localStorage.getItem(keyName) ? Number(localStorage.getItem(keyName)) : defaultCodes[i];
+        controlKeys[keyName] = this.input.keyboard.addKey(keyCode);
     });
-
-    /*
-    controlKeys.PAUSE.on('down', function () {
-        if (!this.settingsMenuOpen)
-            showSettings.call(this);
-        else
-            hideSettings.call(this);
-    });*/
 }
 
 // This will generate a random coordinate, that can't be within a hole

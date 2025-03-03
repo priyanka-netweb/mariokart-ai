@@ -1,6 +1,6 @@
 # **Super Mario AI**
 
-Super Mario AI is a modern reimagining of the classic Super Mario Bros game, built with the Phaser framework along with gesture control for controlling Mario. This project seeks to revive the nostalgia of the legendary platformer while making it accessible on contemporary web browsers along with using Computer Vision and Mediapipe for unique and challenging twist. A standout aspect of the game is its random level generation, guaranteeing that every session presents a fresh and engaging challenge.
+Super Mario AI is a modern reimagining of the classic Super Mario Bros game, developed using the Phaser framework with integrated gesture-based controls for Mario. This project aims to preserve the nostalgia of the iconic platformer while enhancing gameplay with Computer Vision and MediaPipe for a unique and immersive experience. Additionally, the game features random level generation, ensuring that each playthrough offers a dynamic and challenging environment.
 
 
 ## **Table of Contents**

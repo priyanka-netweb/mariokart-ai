@@ -18,22 +18,9 @@ Technologies used here:
 - Mediapipe
 - OpenCV
 
-### Controls
-
-Controls are fully customizable, however default controls are:
-
-**Jump:** ↑
-
-**Move Left:** ←
-
-**Move Right:** →
-
-**Crouch:** ↓
-
-**Fire:** Q
-
 ### Gesture Controls
 
+Gestures that controls the character, which are customizable
 
 **Jump:** Both hands open
 

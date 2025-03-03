@@ -22,12 +22,16 @@ Technologies used here:
 
 Gestures that controls the character, which are customizable
 
-**Jump:** Both hands open
-
 **Move Left:** Left Fist only
 
 **Move Right:** Right Fist only
 
+**Jump:** Both hands open
+
+**Jump While moving Right :** Both hands open
+
+**Jump while moving Left:** Both hands open
+
 **Crouch:** Both hands fist
 
-**Fire:** Any hand fist with an open hand
+**Fire:** One fist with one open hand

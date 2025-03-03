@@ -12,11 +12,11 @@ Super Mario AI is a modern reimagining of the classic Super Mario Bros game, bui
 
 Technologies used here:
 
-Flask
-Phaser.js
-HTML/CSS
-Mediapipe
-OpenCV
+- Flask
+- Phaser.js
+- HTML/CSS
+- Mediapipe
+- OpenCV
 
 ### Controls
 

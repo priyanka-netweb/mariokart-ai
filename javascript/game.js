@@ -14,7 +14,7 @@ var config = {
     type: Phaser.AUTO,
     width: screenWidth,
     height: screenHeight,
-    backgroundColor: 0x8585FF,
+    backgroundColor: 0x85C2FF,
     parent: 'game',
     preserveDrawingBuffer: true,
     physics: {

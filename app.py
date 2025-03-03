@@ -1,7 +1,6 @@
 from flask import Flask, send_file, Response, jsonify
 import cv2
 import mediapipe as mp
-import threading
 import time
 
 app = Flask(__name__, static_url_path="", static_folder=".")
@@ -86,6 +85,8 @@ def generate_frames():
             controlKeys["LEFT"] = True
         if right_hand_closed and detected_hands == 1:
             controlKeys["RIGHT"] = True
+        if left_hand_open and detected_hands == 2 or right_hand_open and detected_hands == 2:
+            controlKeys["FIRE"] = True
 
  # Display actions on the frame
         action_text = " ".join({k: v for k, v in controlKeys.items() if v})

@@ -1,47 +1,49 @@
+# **Super Mario AI**
 
-# **Super Mario Phaser**
-
-Super Mario Phaser is a recreation of the classic Super Mario Bros game using the Phaser framework. This project aims to bring the nostalgic experience of playing the iconic platformer to modern web browsers. One exciting feature of this game is the random level generation, which ensures that each playthrough offers a unique and challenging experience.
+Super Mario AI is a modern reimagining of the classic Super Mario Bros game, built with the Phaser framework along with gesture control for controlling Mario. This project seeks to revive the nostalgia of the legendary platformer while making it accessible on contemporary web browsers along with using Computer Vision and Mediapipe for unique and challenging twist. A standout aspect of the game is its random level generation, guaranteeing that every session presents a fresh and engaging challenge.
 
 
 ## **Table of Contents**
 
-- [Demo](#Demo)
+- [TechStack](#TeckStack)
 - [Controls](#Controls)
-- [Contributing](#Contributing)
-- [License](#License)
 
-### Demo
+### TechStack
 
-A live demo of the game can be accessed at [https://decapapi.github.io/Super-Mario-Phaser/](https://decapapi.github.io/Super-Mario-Phaser/).
+Technologies used here:
 
-Some screenshots of the game:
-
-![Level Gameplay](assets/showcase/level-gameplay.gif)
-
-![Level Start](assets/showcase/level-start.gif)
-
-![Level End](assets/showcase/level-end.gif)
-
-![Settings Screen](assets/showcase/settings-screen.png)
+Flask
+Phaser.js
+HTML/CSS
+Mediapipe
+OpenCV
 
 ### Controls
 
 Controls are fully customizable, however default controls are:
 
-**Jump:** SPACE
+**Jump:** ↑
 
-**Move Left:** A
+**Move Left:** ←
 
-**Move Right:** D
+**Move Right:** →
 
-**Crouch:** S
+**Crouch:** ↓
 
 **Fire:** Q
 
-### Contributing
+### Gesture Controls
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. Make sure to adhere to the existing code style and follow the established guidelines.
+
+**Jump:** Both hands open
+
+**Move Left:** Left Fist only
+
+**Move Right:** Right Fist only
+
+**Crouch:** Both hands fist
+
+**Fire:** Any hand fist with an open hand
 
 
 <!-- ----------------------------added by priyanka------------------------------ -->

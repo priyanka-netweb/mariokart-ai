@@ -44,9 +44,3 @@ Controls are fully customizable, however default controls are:
 **Crouch:** Both hands fist
 
 **Fire:** Any hand fist with an open hand
-
-
-<!-- ----------------------------added by priyanka------------------------------ -->
-
-for hand tracking: use mediapipe since it has built-in handtracking
-Use WebSockets or Flask-SocketIO to send real-time hand positions from the Python backend to the Phaser game.

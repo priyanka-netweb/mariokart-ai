@@ -347,18 +347,19 @@ function fetchControls() {
     fetch('/controls')
         .then(response => response.json())
         .then(data => {
-            // Simulate key press based on API response
-            controlKeys.JUMP.isDown = data.JUMP;
-            controlKeys.DOWN.isDown = data.CROUCH;
-            controlKeys.LEFT.isDown = data.LEFT;
-            controlKeys.RIGHT.isDown = data.RIGHT;
-            controlKeys.FIRE.isDown = data.FIRE;
+            // Ensure the controlKeys exist before updating
+            if (controlKeys.JUMP) controlKeys.JUMP.isDown = data.JUMP;
+            if (controlKeys.DOWN) controlKeys.DOWN.isDown = data.CROUCH;
+            if (controlKeys.LEFT) controlKeys.LEFT.isDown = data.LEFT;
+            if (controlKeys.RIGHT) controlKeys.RIGHT.isDown = data.RIGHT;
+            if (controlKeys.FIRE) controlKeys.FIRE.isDown = data.FIRE;
         })
         .catch(error => console.error('Error fetching controls:', error));
 }
 
 // Poll controls every 100ms
 setInterval(fetchControls, 100);
+
 
 function createControls() {
     this.joyStick = this.plugins.get('rexvirtualjoystickplugin').add(this, {
